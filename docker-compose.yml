@@ -1,0 +1,7 @@
+version: "3"
+services:
+  sampleserver:
+    build: sampleserver
+    command: th server.lua -port 8080 -host 0.0.0.0 -default_model /root/torch-rnn/models/default.t7
+    volumes:
+      - models:/root/torch-rnn/model.t7
