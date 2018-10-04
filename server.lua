@@ -43,5 +43,3 @@ while 1 do
 end
 client:close()
 end
-
-print('server running at http://localhost:1337/')

@@ -37,13 +37,8 @@ RUN luarocks install torch && \
 RUN git clone https://github.com/deepmind/torch-hdf5 /root/torch-hdf5 \
  && cd /root/torch-hdf5 \
  && luarocks make hdf5-0-0.rockspec
-    
-# at this point torch-rnn is installed
-# now we just need luvit
 
-RUN curl -L https://github.com/luvit/lit/raw/master/get-lit.sh | sh \
- && chmod +x luvi luvit lit \
- && mv luvi luvit lit /usr/local/bin
+# torch is all done now
 
-#Done!
+COPY server.lua /root/torch-rnn/
 WORKDIR /root/torch-rnn
